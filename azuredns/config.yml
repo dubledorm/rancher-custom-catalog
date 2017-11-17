@@ -1,0 +1,7 @@
+name: Azure Zone DNS
+description: |
+  Rancher external DNS service powered by Azure
+version: v0.1.0
+category: External DNS
+labels:
+  io.rancher.orchestration.supported: 'cattle,mesos,swarm,kubernetes'

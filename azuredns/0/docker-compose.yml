@@ -1,0 +1,17 @@
+azuredns:
+  image: external-dns:master
+  command: -provider=azure
+  expose:
+   - 1000
+  environment:
+    AZURE_RESOURCE_GROUP: ${AZURE_RESOURCE_GROUP}
+    AZURE_CLIENT_ID: ${AZURE_CLIENT_ID}
+    AZURE_CLIENT_SECRET: ${AZURE_CLIENT_SECRET}
+    AZURE_SUBSCRIPTION_ID: ${AZURE_SUBSCRIPTION_ID}
+    AZURE_TENANT_ID: ${AZURE_TENANT_ID}
+    ROOT_DOMAIN: ${ROOT_DOMAIN}
+    NAME_TEMPLATE: ${NAME_TEMPLATE}
+    TTL: ${TTL}
+  labels:
+      io.rancher.container.create_agent: "true"
+      io.rancher.container.agent.role: "external-dns"
