@@ -1,5 +1,5 @@
 azuredns:
-  image: external-dns:master
+  image: ncheutin/rancher-external-dns:v0.1.0
   command: -provider=azure
   expose:
    - 1000
