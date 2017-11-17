@@ -18,7 +18,7 @@
     - variable: "AZURE_CLIENT_SECRET"
       label: "Azure client secret"
       description: "Azure client secret."
-      type: "string"
+      type: "password"
       required: true
     - variable: "AZURE_SUBSCRIPTION_ID"
       label: "Azure subscription ID"
