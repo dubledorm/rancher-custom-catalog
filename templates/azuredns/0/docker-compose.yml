@@ -13,5 +13,6 @@ azuredns:
     NAME_TEMPLATE: ${NAME_TEMPLATE}
     TTL: ${TTL}
   labels:
-      io.rancher.container.create_agent: "true"
-      io.rancher.container.agent.role: "external-dns"
+    io.rancher.container.pull_image: always
+    io.rancher.container.create_agent: "true"
+    io.rancher.container.agent.role: "external-dns"
