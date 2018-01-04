@@ -18,13 +18,27 @@ services:
     start_on_create: true
     
     lb_config:
-      certs: []
+    
+      certs:
+      - default
+      
+      default_cert: default
+      
       port_rules:
+      
+      # HTTP traffic
       - priority: 1
         protocol: http
         service: nginx-web
         source_port: 80
         target_port: 80
+      
+      # HTTPS traffic  
+      - priority: 2
+        protocol: https
+        service: nginx-web
+        source_port: 443
+        target_port: 443
         
     health_check:
       healthy_threshold: 2
