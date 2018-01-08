@@ -7,7 +7,6 @@ services:
     image: nginx:1.13.7
     expose:
     - '80'
-    - '443'
     labels:
       io.rancher.container.pull_image: always
       
@@ -15,7 +14,6 @@ services:
   loadbalancer:
     image: rancher/lb-service-haproxy:v0.7.15
     ports:
-    - 80:80/tcp
     - 443:443/tcp
     
     labels:

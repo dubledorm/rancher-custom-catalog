@@ -5,6 +5,17 @@ catalog:
   name: "Sample nginx"
   version: "v0.0.1"
   description: "A sample nginx server"
+  
+  # User questions
+  questions:
+  
+  # Name of the certificate to use
+  - variable: "CERTIFICATE_NAME"
+    type: "string"
+    label: "Certificate name"
+    description: "The name of the certificate to "
+    default: "default"
+    required: true
 
 services:
 
@@ -18,27 +29,25 @@ services:
     start_on_create: true
     
     lb_config:
+
+      # Hostname to map
+      hostname: ${fqdn}
     
+      # Available certificates
       certs:
-      - default
+      - ${CERTIFICATE_NAME}
       
-      default_cert: default
+      # Default cert
+      default_cert: ${CERTIFICATE_NAME}
       
       port_rules:
       
-      # HTTP traffic
-      - priority: 1
-        protocol: http
-        service: nginx-web
-        source_port: 80
-        target_port: 80
-      
       # HTTPS traffic  
-      - priority: 2
+      - priority: 1
         protocol: https
         service: nginx-web
         source_port: 443
-        target_port: 443
+        target_port: 80
         
     health_check:
       healthy_threshold: 2
