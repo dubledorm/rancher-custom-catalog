@@ -10,10 +10,18 @@ catalog:
   questions:
   
   # Name of the certificate to use
+  - variable: "FQDN"
+    type: "string"
+    label: "Full qualifier domain name"
+    description: "The FQDN. Must match service FQDN in the following format : <stack_name>.<external DNS domain>. Example nginx-sample.dsu.nestle.biz"
+    default: "nginx-sample.dsu.nestle.biz"
+    required: true  
+  
+  # Name of the certificate to use
   - variable: "CERTIFICATE_NAME"
     type: "string"
     label: "Certificate name"
-    description: "The name of the certificate to "
+    description: "The name of the certificate to use"
     default: "default"
     required: true
 
@@ -31,7 +39,7 @@ services:
     lb_config:
 
       # Hostname to map
-      hostname: ${fqdn}
+      hostname: ${FQDN}
     
       # Available certificates
       certs:
