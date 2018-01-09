@@ -61,7 +61,7 @@ services:
       # HTTPS traffic  
       - priority: 1
         hostname: ${SUBDOMAIN}.${DOMAIN}
-        protocol: https
+        protocol: http
         service: nginx-web
         source_port: 8080
         target_port: 80
