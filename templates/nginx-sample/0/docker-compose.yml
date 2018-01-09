@@ -25,9 +25,10 @@ services:
       io.rancher.scheduler.global: 'true'
       
       traefik.enable: 'true'
-      traefik.protocol: 'true'
+      traefik.protocol: 'https'
       traefik.alias: '${SUBDOMAIN}'
       traefik.domain: '${DOMAIN}'
+      traefik.frontend.rule: '${SUBDOMAIN}.${DOMAIN}'
       traefik.port: '443'
       traefik.acme: 'false'
       traefik.path: '/'
