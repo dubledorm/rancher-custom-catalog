@@ -63,7 +63,7 @@ services:
         hostname: ${SUBDOMAIN}.${DOMAIN}
         protocol: https
         service: nginx-web
-        source_port: 443
+        source_port: 8080
         target_port: 80
         
     health_check:
