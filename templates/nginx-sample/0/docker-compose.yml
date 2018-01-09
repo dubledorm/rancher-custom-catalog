@@ -17,7 +17,17 @@ services:
     - 443:443/tcp
     
     labels:
+    
+      # Rancher
       io.rancher.container.agent.role: environmentAdmin,agent
       io.rancher.container.agent_service.drain_provider: 'true'
       io.rancher.container.create_agent: 'true'
       io.rancher.scheduler.global: 'true'
+      
+      traefik.enable: 'true'
+      traefik.protocol: 'true'
+      traefik.alias: '$${stack_name}'
+      traefik.domain: '${DOMAIN}'
+      traefik.port: '443'
+      traefik.acme: 'false'
+      traefik.path: '/'

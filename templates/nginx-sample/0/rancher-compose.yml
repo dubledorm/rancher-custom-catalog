@@ -9,12 +9,12 @@ catalog:
   # User questions
   questions:
   
-  # Name of the certificate to use
-  - variable: "FQDN"
+  # Subdomain
+  - variable: "DOMAIN"
     type: "string"
-    label: "Full qualifier domain name"
-    description: "The FQDN. Must match service FQDN in the following format : <stack_name>.<external DNS domain>. Example nginx-sample.dsu.nestle.biz"
-    default: "nginx-sample.dsu.nestle.biz"
+    label: "The domain to use"
+    description: "The domain to use. Example dsu.nestle.biz"
+    default: "dsu.nestle.biz"
     required: true  
   
   # Name of the certificate to use
@@ -52,7 +52,7 @@ services:
       
       # HTTPS traffic  
       - priority: 1
-        hostname: ${FQDN}
+        hostname: ${stack_name}.${DOMAIN}
         protocol: https
         service: nginx-web
         source_port: 443
