@@ -26,7 +26,7 @@ services:
       
       traefik.enable: 'true'
       traefik.protocol: 'true'
-      traefik.alias: '$${stack_name}'
+      traefik.alias: '${SUBDOMAIN}'
       traefik.domain: '${DOMAIN}'
       traefik.port: '443'
       traefik.acme: 'false'

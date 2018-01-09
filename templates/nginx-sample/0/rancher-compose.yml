@@ -10,12 +10,20 @@ catalog:
   questions:
   
   # Subdomain
+  - variable: "SUBDOMAIN"
+    type: "string"
+    label: "The subdomain to use"
+    description: "The subdomain to use. Example nginx."
+    default: "nginx"
+    required: true
+  
+  # Subdomain
   - variable: "DOMAIN"
     type: "string"
     label: "The domain to use"
     description: "The domain to use. Example dsu.nestle.biz"
     default: "dsu.nestle.biz"
-    required: true  
+    required: true
   
   # Name of the certificate to use
   - variable: "CERTIFICATE_NAME"
@@ -52,7 +60,7 @@ services:
       
       # HTTPS traffic  
       - priority: 1
-        hostname: ${stack_name}.${DOMAIN}
+        hostname: ${SUBDOMAIN}.${DOMAIN}
         protocol: https
         service: nginx-web
         source_port: 443
