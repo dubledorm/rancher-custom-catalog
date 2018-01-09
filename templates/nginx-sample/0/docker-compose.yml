@@ -14,7 +14,7 @@ services:
   loadbalancer:
     image: rancher/lb-service-haproxy:v0.7.15
     ports:
-    - 443:443/tcp
+    - 8080:80/tcp
     
     labels:
     
@@ -25,10 +25,10 @@ services:
       io.rancher.scheduler.global: 'true'
       
       traefik.enable: 'true'
-      traefik.protocol: 'https'
+      traefik.protocol: 'http'
       traefik.alias: '${SUBDOMAIN}'
       traefik.domain: '${DOMAIN}'
-      traefik.frontend.rule: '${SUBDOMAIN}.${DOMAIN}'
-      traefik.port: '443'
+      traefik.frontend.rule: 'Host: ${SUBDOMAIN}.${DOMAIN}'
+      traefik.port: '8080'
       traefik.acme: 'false'
       traefik.path: '/'
