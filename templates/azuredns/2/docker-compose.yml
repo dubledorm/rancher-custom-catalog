@@ -1,5 +1,5 @@
 azuredns:
-  image: docker.dsu.nestle.biz/nestle/rancher/external-dns
+  image: dsu-devops-registry.dsu.nestle.biz/nestle/rancher/external-dns
   command: -provider=azure
   expose:
    - 1000
