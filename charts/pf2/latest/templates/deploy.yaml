@@ -17,7 +17,7 @@ spec:
         - containerPort: {{ .Values.service.sourcePort }}
           name: sourcePort
           protocol: TCP
-        - containerPort: {{ .Values.service.destPort }}
+        - containerPort: 30012
           name: destPort
           protocol: TCP
         env:
