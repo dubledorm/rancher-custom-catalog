@@ -1,0 +1,12 @@
+name: pf2
+icon: https://drone.io/apple-touch-icon.png
+version: 0.6
+appVersion: 0.6
+description: Простой tcp сервер для связывания нескольких портов
+keywords:
+- infosphera
+sources:
+- https://git.milandr.ru/InfoSphere/Gateway/tree/pf2
+maintainers:
+- name: milandr
+email: dubledorm@gmail.com
