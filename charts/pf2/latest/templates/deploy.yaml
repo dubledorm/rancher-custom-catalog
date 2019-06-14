@@ -21,5 +21,5 @@ spec:
           name: destPort
           protocol: TCP
         env:
-       - name: KUBERNETES_DEPLOYED
-          value: "{{ now }}"
+          - name: KUBERNETES_DEPLOYED
+            value: "{{ now }}"
