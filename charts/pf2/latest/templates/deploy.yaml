@@ -15,10 +15,10 @@ spec:
         imagePullPolicy: {{ .Values.images.server.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.sourcePort }}
-          name: sourcePort
+          name: source-port
           protocol: TCP
         - containerPort: 30012
-          name: destPort
+          name: dest-port
           protocol: TCP
         env:
           - name: KUBERNETES_DEPLOYED
