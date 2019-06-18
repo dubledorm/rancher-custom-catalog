@@ -11,6 +11,4 @@ service:
   type: NodePort
 
 
-fullname: "pf2.application"
-name: "pf2"
 
