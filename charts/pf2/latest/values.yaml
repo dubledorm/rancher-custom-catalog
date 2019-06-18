@@ -9,5 +9,8 @@ service:
   sourcePort: 30010
   destPort: 30011
   type: NodePort
-  
+
+
+fullname: "pf2.application"
+name: "pf2"
 
