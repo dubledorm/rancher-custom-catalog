@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "pf2.fullname"
+  name: "pf2"
   labels:
-    app: "pf2.name"
+    app: "pf2-application"
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -23,6 +23,6 @@ spec:
     nodePort: {{ .Values.service.nodePort }}
 {{- end }}
   selector:
-    app: "pf2.name"
+    app: "pf2"
     release: {{ .Release.Name | quote }}
     component: server
