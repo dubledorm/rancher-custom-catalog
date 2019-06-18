@@ -1,6 +1,6 @@
 name: pf2
 icon: https://drone.io/apple-touch-icon.png
-version: 0.7
+version: 0.7.1
 appVersion: 0.6.1
 description: Простой tcp сервер для связывания нескольких портов
 keywords:

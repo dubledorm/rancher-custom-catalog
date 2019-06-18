@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
+  namespace: test-namespace
 spec:
   replicas: 1
   template:
@@ -14,12 +15,14 @@ spec:
         image: "{{ .Values.images.server.repository }}:{{ .Values.images.server.tag }}"
         imagePullPolicy: {{ .Values.images.server.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.service.sourcePort }}
+        - containerPort: 8200
           name: source-port
           protocol: TCP
-        - containerPort: 30012
+        - containerPort: 8229
           name: dest-port
           protocol: TCP
         env:
           - name: KUBERNETES_DEPLOYED
             value: "{{ now }}"
+
+

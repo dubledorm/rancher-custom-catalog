@@ -7,5 +7,7 @@ images:
 
 service:
   sourcePort: 30010
+  destPort: 30011
   type: NodePort
+  
 
