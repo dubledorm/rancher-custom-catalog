@@ -23,6 +23,6 @@ spec:
     nodePort: {{ .Values.service.nodePort }}
 {{- end }}
   selector:
-    app: {{ template "pf2.name" . }}
+    app: "pf2.name"
     release: {{ .Release.Name | quote }}
     component: server
