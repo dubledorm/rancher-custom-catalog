@@ -10,13 +10,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - name: externalPort
+  - name: external-port
     port: {{ .Values.service.sourcePort }}
     targetPort: 8200
 {{- if hasKey .Values.service "nodePort" }}
     nodePort: {{ .Values.service.nodePort }}
 {{- end }}
-  - name: internalPort
+  - name: internal-port
     port: {{ .Values.service.destPort }}
     targetPort: 8229
 {{- if hasKey .Values.service "nodePort" }}
